@@ -49,4 +49,16 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const celebration = await Celebrations.findByIdAndDelete(req.params.id)
+      .lean()
+      .exec();
+    return res.status(200).send(celebration);
+  } catch (err) {
+    return res.status(500).send(err);
+  }
+});
+
+
 module.exports = router;
