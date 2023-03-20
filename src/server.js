@@ -1,10 +1,15 @@
 const app = require("./index");
 const connect = require("./configs/db");
+const dotenv =require("dotenv");
 
-app.listen(1235, async () => {
+dotenv.config();
+
+const PORT=process.env.PORT||4000;
+
+app.listen(PORT, async () => {
   try {
     await connect();
-    console.log("listening on port 1235");
+    console.log(`listening on port ${PORT}`);
   } catch (err) {
     console.log(err);
   }
