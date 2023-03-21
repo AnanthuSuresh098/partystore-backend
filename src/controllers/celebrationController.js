@@ -27,8 +27,6 @@ router.post("", async (req, res) => {
 });
 
 
-
-
 // Celebrations Category Routes
 
 router.post("/:category", async (req, res) => {
