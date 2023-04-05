@@ -47,9 +47,6 @@ router.get("/:category", async (req, res) => {
   }
 });
 
-
-
-
 // Celebrations id Route
 
 router.patch("/:id", async (req, res) => {
