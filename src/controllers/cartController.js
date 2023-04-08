@@ -43,4 +43,16 @@ router.post("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const user = await Users.findById(req.params.id);
+    user.cartItems.splice(0, user.cartItems.length);
+user.save();
+    return res.send(user);
+    
+  } catch (err) {
+    return res.status(500).send(err);
+  }
+});
+
 module.exports=router;
