@@ -9,8 +9,8 @@ router.get("/:id", async (req, res) => {
     const user = await Users.findById(req.params.id).lean().exec();
     console.log(user);
     return res.send({ wishlist: user.wishlist });
-  } catch (err) {
-    return res.status(500).send(err);
+  } catch (error) {
+    return res.status(500).send(error);
   }
 });
 
