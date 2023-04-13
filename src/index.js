@@ -7,9 +7,11 @@ const cartController = require("./controllers/cartController");
 const wishlistController = require("./controllers/wishlistController");
 
 const app = express();
-app.use(cors());
+
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use("/celebration", celebrationController);
 app.use("/auth", authController);
