@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const celebrationController = require("./controllers/celebrationController");
 const authController = require("./controllers/authController");
@@ -6,6 +7,7 @@ const cartController = require("./controllers/cartController");
 const wishlistController = require("./controllers/wishlistController");
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
