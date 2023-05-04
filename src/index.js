@@ -6,6 +6,7 @@ const authController = require("./controllers/authController");
 const cartController = require("./controllers/cartController");
 const wishlistController = require("./controllers/wishlistController");
 const birthdayController = require("./controllers/birthdayController");
+const productsController = require("./controllers/productsController");
 
 const app = express();
 app.use(cors());
@@ -19,5 +20,6 @@ app.use("/auth", authController);
 app.use("/cart", cartController);
 app.use("/wishlist", wishlistController);
 app.use("/birthday", birthdayController);
+app.use("/products", productsController);
 
 module.exports = app;
