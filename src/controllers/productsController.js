@@ -26,6 +26,17 @@ router.post("", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const product = await Products.findByIdAndDelete(req.params.id)
+      .lean()
+      .exec();
+    return res.status(200).send(product);
+  } catch (err) {
+    return res.status(500).send(err);
+  }
+});
+
 // Products Category Routes
 
 router.post("/:category", async (req, res) => {

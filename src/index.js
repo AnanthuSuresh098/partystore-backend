@@ -8,6 +8,7 @@ const wishlistController = require("./controllers/wishlistController");
 const birthdayController = require("./controllers/birthdayController");
 const productsController = require("./controllers/productsController");
 const festivalController = require("./controllers/festivalController");
+const uploadController = require("./controllers/uploadController");
 
 const app = express();
 app.use(cors());
@@ -23,5 +24,6 @@ app.use("/cart", cartController);
 app.use("/wishlist", wishlistController);
 app.use("/birthday", birthdayController);
 app.use("/products", productsController);
+app.use("/upload", uploadController);
 
 module.exports = app;

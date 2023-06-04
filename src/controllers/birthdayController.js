@@ -30,7 +30,18 @@ router.get("/:theme", async (req, res) => {
   }
 });
 
-// Celebrations Category Routes
+router.delete("/:theme/:id", async (req, res) => {
+  try {
+    const birthday = await Birthdays.findByIdAndDelete(req.params.id)
+      .lean()
+      .exec();
+    return res.status(200).send(birthday);
+  } catch (err) {
+    return res.status(500).send(err);
+  }
+});
+
+// Birthday Category Routes
 
 router.post("/:theme/:category", async (req, res) => {
   try {
