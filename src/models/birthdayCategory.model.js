@@ -15,6 +15,7 @@ const birthdayCategorySchema = new mongoose.Schema(
       {
         title: { type: String, required: true },
         description: { type: String, required: false },
+        image:{ type: String, required: true },
         price: { type: Number, required: true },
         rating: { type: Number, required: true },
         additional_info: { type: String, required: false },
